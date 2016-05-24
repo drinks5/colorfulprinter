@@ -1,0 +1,4 @@
+*.pyc
+build/
+corlorprinter.egg-info/
+dist
