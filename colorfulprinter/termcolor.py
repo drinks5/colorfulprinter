@@ -2,7 +2,7 @@
 # @Author: linlin
 # @Date:   2016-05-24 16:21:07
 # @Last Modified by:   drinks
-# @Last Modified time: 2016-05-24 23:19:32
+# @Last Modified time: 2016-05-25 10:30:34
 from __future__ import print_function
 import os
 from random import choice
@@ -28,6 +28,7 @@ COLORS = dict(zip(
         'cyan',
         'white',
     ], list(range(30, 38))))
+COLORS.pop('grey')
 RESET = '\033[0m'
 
 
@@ -46,16 +47,12 @@ def colored(text, color=None, on_color=None, attrs=None):
 
 
 def cprint(text, color=None, on_color=None, attrs=None, **kwargs):
-    print(colored(text, color=None, on_color=None, attrs=None), **kwargs)
+    print(colored(text, color=color, on_color=on_color, attrs=attrs), **kwargs)
 
 
 def color_write(func):
     def warp(text):
-        'Underline red on grey color',
         color = choice(list(COLORS))
         text = func(colored(text, color=color))
         return text
-
     return warp
-
-# from pprint import ter
