@@ -2,11 +2,11 @@
 # @Author: root
 # @Date:   2016-05-24 16:50:06
 # @Last Modified by:   drinks
-# @Last Modified time: 2016-05-25 10:31:15
+# @Last Modified time: 2016-05-25 10:40:46
 
 from setuptools import setup, find_packages
 
-VERSION = '0.2.4'
+VERSION = '0.2.7'
 
 setup(name='colorfulprinter',
       version=VERSION,

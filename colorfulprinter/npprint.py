@@ -2,7 +2,7 @@
 # @Author: linlin
 # @Date:   2016-05-24 16:21:15
 # @Last Modified by:   drinks
-# @Last Modified time: 2016-05-24 23:09:00
+# @Last Modified time: 2016-05-25 15:28:26
 #  Author:      Fred L. Drake, Jr.
 #               fdrake@acm.org
 #
@@ -49,8 +49,8 @@ except ImportError:
     except ImportError:
         from io import StringIO as _StringIO
 
-from termcolor import color_write
-from compat import PY3, unicode
+from .termcolor import color_write
+from .compat import PY3, unicode
 __all__ = ["pprint", "pformat", "isreadable", "isrecursive", "saferepr",
            "PrettyPrinter"]
 
@@ -252,7 +252,7 @@ class PrettyPrinter(object):
         and flags indicating whether the representation is 'readable'
         and whether the object represents a recursive construct.
         """
-        if PY3 and isinstance(object, unicode):
+        if isinstance(object, unicode):
             return (object.encode('utf8'), True, False)
         return _safe_repr(object, context, maxlevels, level)
 

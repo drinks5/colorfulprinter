@@ -6,6 +6,7 @@
 from __future__ import print_function
 import os
 from random import choice
+__all__ = ('colored', 'cprint', 'color_write')
 ATTRIBUTES = dict(zip(
     [
         'bold', 'dark', '', 'underline', 'blink', '', 'reverse', 'concealed'
